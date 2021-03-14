@@ -48,3 +48,22 @@
 		</div>
 	</body>
 </html>
+
+<ul id="musiclist">
+	<?php
+            $dir = "/songs/";
+            $mp3_Songs = scandir($dir,0,".mp3");
+            foreach ($mp3_Songs as $songs){?>
+	<li class="mp3item">
+		<a href="songs/<?=$songs?>"><?=$songs?></a>
+	</li>
+	<?php}?>
+	<?php
+            $dir = '/songs/';
+            $text_lyrics = scandir($dir,0,".txt");
+        foreach ($dir as $text){?>
+	<li class="playlistitem">
+		<a href="index.php?playlist=<?=$text?>"><?=$text?></a>
+	</li>
+	<?php}?>
+</ul>
